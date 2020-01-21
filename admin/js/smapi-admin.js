@@ -41,7 +41,7 @@
 			var smapi_username = $('#username').val();
 			var smapi_password = $('#password').val();
 			/* Make the post to the cloud service */
-			$.post( "https://snurra.datadelenhc.com/api/v1/login", { email: smapi_username, password: smapi_password })
+			$.post( "https://api.smartprovider.se/api/v1/login", { email: smapi_username, password: smapi_password })
 			.done(function( data ) {
 				var json_string = JSON.stringify(data);
 				var json_obj = jQuery.parseJSON(json_string);
