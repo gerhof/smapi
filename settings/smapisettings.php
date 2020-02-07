@@ -15,35 +15,7 @@
             }
         }
     }
-    /* Update plugin version from Git */
-    if ($_POST['action'] == 'updatesmapidata') {
-        $download_url = "https://github.com/gerhof/SMAPI/archive/master.zip";
-        $content = file_get_contents($download_url);
-        $upload_directory = $_SERVER["DOCUMENT_ROOT"]."/wp-content/upgrade";
-        $ch = curl_init();
-        $f = fopen(__DIR__.'/master.zip', 'w+');
-        $opt = [
-                CURLOPT_URL => $download_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FILE => $f,
-                CURLOPT_FOLLOWLOCATION => true,                
-                CURLOPT_BINARYTRANSFER => true,
-                CURLOPT_HEADER => false,
-                CURLOPT_SSL_VERIFYHOST => false,
-                CURLOPT_SSL_VERIFYPEER => false,
-        ];
-        curl_setopt_array($ch, $opt);
-        $file = curl_exec($ch);
-        curl_close($ch);
-        fclose($f);
 
-
-        /* Make sure upload folder is writeable */
-        if (is_writable($upload_directory)) {
-            echo "hit";
-            file_put_contents($upload_directory."/upload/smapi.zip",  fopen($download_url, "r"));
-        }
-    }
     /* Check if we have any credentials stored */
     $smapi_username = get_option("stored_smapi_username");
     $smapi_password = get_option("stored_smapi_password");
