@@ -18,9 +18,9 @@
     /* Update plugin version from Git */
     if ($_POST['action'] == 'updatesmapidata') {
         $download_url = "https://github.com/gerhof/SMAPI/archive/master.zip";
+        $content = file_get_contents($download_url);
         $upload_directory = $_SERVER["DOCUMENT_ROOT"]."/wp-content/upgrade";
-        echo $upload_directory;
-        file_put_contents($upload_directory."/upload/smapi.zip",  fopen($download_url, "r"));
+        file_put_contents("smapi.zip",  $content);
         /* Make sure upload folder is writeable */
         if (is_writable($upload_directory)) {
             echo "hit";
