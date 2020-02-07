@@ -20,8 +20,24 @@
         $download_url = "https://github.com/gerhof/SMAPI/archive/master.zip";
         $content = file_get_contents($download_url);
         $upload_directory = $_SERVER["DOCUMENT_ROOT"]."/wp-content/upgrade";
-        file_put_contents("smapi.zip",  $content);
-        exec("wget https://github.com/gerhof/SMAPI/archive/master.zip");
+        $ch = curl_init();
+        $f = fopen(__DIR__.'/master.zip', 'w+');
+        $opt = [
+                CURLOPT_URL => $download_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FILE => $f,
+                CURLOPT_FOLLOWLOCATION => true,                
+                CURLOPT_BINARYTRANSFER => true,
+                CURLOPT_HEADER => false,
+                CURLOPT_SSL_VERIFYHOST => false,
+                CURLOPT_SSL_VERIFYPEER => false,
+        ];
+        curl_setopt_array($ch, $opt);
+        $file = curl_exec($ch);
+        curl_close($ch);
+        fclose($f);
+
+
         /* Make sure upload folder is writeable */
         if (is_writable($upload_directory)) {
             echo "hit";
