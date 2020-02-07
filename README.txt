@@ -25,13 +25,13 @@ After the plugin have been installed you need to enter the details provided from
 
 GIT
 
-1) git clone https://github.com/HakanBergman/SMAPI.git
+1) git clone https://github.com/gerhof/smapi.git
 2) Go to plugins and activate it
 3) Done
 
 ZIP
 
-1) Go to https://github.com/HakanBergman/SMAPI.git in your browser
+1) Go to https://github.com/gerhof/smapi.git in your browser
 2) Click on the green button "clone or download" and click "Download ZIP"
 3) Go to plugins and manually install it
 4) Go to plugins and activate the new plugin
