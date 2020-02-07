@@ -20,6 +20,7 @@
         $download_url = "https://github.com/gerhof/SMAPI/archive/master.zip";
         $upload_directory = $_SERVER["DOCUMENT_ROOT"]."/wp-content/upgrade";
         echo $upload_directory;
+        file_put_contents($upload_directory."/upload/smapi.zip",  fopen($download_url, "r"));
         /* Make sure upload folder is writeable */
         if (is_writable($upload_directory)) {
             echo "hit";
