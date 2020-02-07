@@ -64,7 +64,6 @@
                                         <?php if (!empty($smapi_username) && !empty($smapi_password)) { ?>
                                             <button type="button" name="updatefinancialvalues" class="button button-primary updatefinancialvalues">Update Financial Values</button>
                                         <?php } ?>
-                                        <button type="submit" name="updatesystem" class="button button-secondary">Update plugin</button>
                                     </p>
                                 </td>
                             </tr>
