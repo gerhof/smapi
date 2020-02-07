@@ -37,6 +37,20 @@ ZIP
 4) Go to plugins and activate the new plugin
 5) Done
 
+== Shortcodes ==
+
+1) Display amount input to user
+[smapi-calculator-input]
+
+2) Display calculator values without insurance
+[smapi-calculator]
+
+3) Display calculator values with insurance
+[smapi-calculator-insurance]
+
+4) Display financial text from Smart SmartProvider
+[smapi-calculator-text]
+
 == Frequently Asked Questions ==
 
 No FAQ Yet.
@@ -61,6 +75,7 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 * Store the values in the database
 * Shortcodes to print out basic elements (HTML)
 * Designer / programmer can design the elements as they see fit with CSS or other tools
+* Updated this file with Shortcode information
 
 = 0.5 =
 * Created a draft of how the plugin will work

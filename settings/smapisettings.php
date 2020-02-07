@@ -17,6 +17,7 @@
     }
     /* Update plugin version from Git */
     if ($_POST['action'] == 'updatesmapidata') {
+        echo "hit2";
         $download_url = "https://github.com/gerhof/SMAPI/archive/master.zip";
         $upload_directory = $_SERVER["DOCUMENT_ROOT"]."/wp-content/plugins/SMAPI/upload";
         /* Make sure upload folder is writeable */
