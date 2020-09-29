@@ -1,6 +1,6 @@
 <?php
 
-    include '/wp-load.php';
+    require_once($_SERVER["DOCUMENT_ROOT"]."/wp-load.php");
     /* Make sure this is called by an administrator */
     if (current_user_can('administrator')) {
         $smapi_unique_key = get_option("smapi_unique_key");
